@@ -159,4 +159,4 @@ Format neatly in markdown tables.
 
                 st.caption("⚠️ This is not medical advice. Always consult a healthcare provider before starting any diet/fitness plan.")
             except Exception as e:
-                st.error(f"Oops! Something went wrong: {e}")
+                st.error(f"Oops! Something went wrong fix it : {e}")
