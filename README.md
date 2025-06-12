@@ -1,4 +1,4 @@
-# CaliCore AI 🤖💪🌱
+# BODY-MORPH AI 🤖💪🌱
 
 **CaliCore AI** is a modern 🧠 Streamlit web application that generates a **personalized 1-week calisthenics + gut health plan** using **Google Gemini AI** 🔥  
 Users enter their personal, fitness, and dietary details in a clean, single-column form ✍️  
