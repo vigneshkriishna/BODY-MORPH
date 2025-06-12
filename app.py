@@ -13,79 +13,89 @@ model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 # Page config
 st.set_page_config(page_title="BODY-MORPH | AI Fitness Planner", layout="centered", initial_sidebar_state="collapsed")
 
-# --- Black & White Styling ---
+# Simple styling
 st.markdown("""
     <style>
-        .css-1d391kg {padding: 0rem 2rem;}
-        .block-container {padding-top: 1rem; padding-bottom: 2rem;}
-        .css-18e3th9 {
-            background-color: #000 !important;
-            color: #fff !important;
-            box-shadow: none !important;
+        /* Clean header */
+        .main-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-bottom: 3px solid #4CAF50;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
-        .css-1v3fvcr {display: none;}
-
-        html, body, [class*="css"] {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Helvetica Neue', sans-serif;
+        
+        .main-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: #2E7D32;
         }
-
-        h1, h2, h3, h4 {
-            color: #fff;
-            margin-bottom: 0.3em;
+        
+        .main-header h3 {
+            color: #666;
+            font-weight: bold;
+            margin-top: 0;
         }
-
+        
+        /* Simple button */
         .stButton button {
-            background-color: #fff;
-            color: #000;
-            border-radius: 8px;
-            font-weight: 700;
-            padding: 0.5em 1.5em;
+            background-color: #4CAF50 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 8px !important;
+            padding: 0.75rem 1.5rem !important;
+            font-weight: 600 !important;
         }
-
+        
         .stButton button:hover {
-            background-color: #999;
-            color: #000;
+            background-color: #45a049 !important;
         }
-
-        input, textarea, select {
-            background-color: #111 !important;
-            border: 1.5px solid #fff !important;
-            border-radius: 6px !important;
-            padding: 0.4em !important;
-            color: #fff !important;
-            font-weight: 500 !important;
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .main-header h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .main-header h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .stTextInput input, .stNumberInput input, .stTextArea textarea {
+                font-size: 16px !important;
+            }
         }
-
-        input::placeholder, textarea::placeholder {
-            color: #aaa !important;
-            font-style: italic;
+        
+        /* Hide Streamlit branding */
+        .css-1v3fvcr {
+            display: none;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# --- Header ---
+# Header with responsive styling
 st.markdown("""
-    <div style='text-align: center; padding: 1.5em 0 1em 0;'>
-        <h1>🧬 BODY-MORPH</h1>
-        <p style='font-size: 1.1em; color: #aaa;'>Your AI-fueled journey to gut health & core transformation</p>
+    <div class='main-header'>
+        <h1>🧬 <strong>BODY-MORPH</strong></h1>
+        <h3>Transform Your Body, Transform Your Life</h3>
     </div>
 """, unsafe_allow_html=True)
 
 # --- User Info Form ---
-with st.form("user_info_form", clear_on_submit=True):
-    st.markdown("### 👤 Your Info")
-    name = st.text_input("Full Name", value="", placeholder="Enter your full name")
-    age = st.number_input("Age", min_value=10, max_value=100, step=1, value=20)
-    sex = st.selectbox("Sex", ["", "Male", "Female", "Other"])
-    height_cm = st.number_input("Height (cm)", min_value=100, max_value=250, step=1)
-    weight_kg = st.number_input("Weight (kg)", min_value=30, max_value=200, step=1)
-    medical_conditions = st.text_area("Medical Conditions", placeholder="e.g., acidity, IBS...")
-    goal = st.text_input("Fitness Goal", placeholder="e.g., build core strength, lose fat")
-    level = st.selectbox("Fitness Level", ["", "Beginner", "Intermediate", "Advanced"])
-    diet_pref = st.selectbox("Diet Preference", ["", "Vegetarian", "Vegan", "High Protein", "Low Carb"])
-    submitted = st.form_submit_button("🚀 Generate Plan")
+with st.form(key='user_info_form', clear_on_submit=True):
+    name = st.text_input('Name', placeholder='Enter your full name')
+    age = st.number_input('Age', min_value=10, max_value=100, step=1, value=None)
+    sex = st.selectbox('Gender', ['', 'Male', 'Female', 'Other'])
+    height_cm = st.number_input('Height (cm)', min_value=100, max_value=250, step=1, value=None)
+    weight_kg = st.number_input('Weight (kg)', min_value=30, max_value=200, step=1, value=None)
+    activity_level = st.selectbox('Activity Level', ['', 'Sedentary', 'Lightly Active', 'Moderately Active', 'Very Active'])
+    goal = st.text_input('Fitness Goal', placeholder='e.g., build core strength, lose fat')
+    level = st.selectbox('Fitness Level', ['', 'Beginner', 'Intermediate', 'Advanced'])
+    diet_pref = st.selectbox('Diet Preference', ['', 'Vegetarian', 'Vegan', 'High Protein', 'Low Carb', 'Non Vegetarian'])
+    allergies = st.text_input('Allergies', placeholder='e.g., lactose, gluten')
+    medical_conditions = st.text_area('Health Conditions', placeholder='e.g., acidity, IBS...')
+    submitted = st.form_submit_button('🚀 Generate My Plan')
 
 # --- BMI Helpers ---
 def calculate_bmi(height_cm, weight_kg):
@@ -105,7 +115,7 @@ def interpret_bmi(bmi):
 # --- On Form Submit ---
 if submitted:
     if not all([name, age, height_cm, weight_kg, goal]):
-        st.warning("⚠️ Please fill in all required fields.")
+        st.error("Please fill in all the required fields.")
     else:
         with st.spinner("🧠 Crafting your personalized plan..."):
             bmi = calculate_bmi(height_cm, weight_kg)
@@ -120,9 +130,11 @@ User Details:
 - Height: {height_cm} cm
 - Weight: {weight_kg} kg
 - BMI: {bmi} ({bmi_status})
+- Activity Level: {activity_level}
 - Fitness Level: {level}
 - Goal: {goal}
 - Diet Preference: {diet_pref}
+- Allergies: {allergies}
 - Medical Issues: {medical_conditions if medical_conditions else "None"}
 
 Instructions:
@@ -134,11 +146,10 @@ Format neatly in markdown tables.
 """
             try:
                 response = model.generate_content(prompt)
-                st.success(f"✅ Plan ready for {name}!")
+                st.subheader(f"✅ Plan ready for {name}!")
                 st.markdown(f"#### 📊 BMI: `{bmi}` — *{bmi_status}*")
-                st.markdown(response.text)
+                st.write(response.text)
 
-                # --- PDF Generation ---
                 def markdown_to_pdf(md_text):
                     pdf = FPDF()
                     pdf.add_page()
