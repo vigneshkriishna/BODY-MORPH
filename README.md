@@ -1,91 +1,111 @@
-# CaliCore AI
+# 🧬 BODY-MORPH
 
-**CaliCore AI** is a modern Streamlit web application that generates a personalized 1-week calisthenics and gut health plan using Google Gemini AI.  
-Users enter their personal, fitness, and dietary details in a clean, single-column form.  
-The app displays a professional, visually appealing plan summary, BMI, and allows users to export their plan as a PDF.
+**BODY-MORPH** is a modern AI-powered fitness planner that generates personalized workout and nutrition plans using Google Gemini AI.
 
----
-
-## Features
-
-- Clean, modern UI with a blue/teal color palette
-- Personalized 1-week calisthenics workout split
-- Gut-friendly, evidence-based diet plan with multiple meal options
-- BMI calculation and interpretation
-- Hydration and digestion tips
-- Export your plan as a PDF
-- All user data is confidential and never stored
+Transform Your Body, Transform Your Life 💪
 
 ---
 
-## Demo
+## ✨ Features
 
-![CaliCore Screenshot](https://img.icons8.com/fluency/96/fitness.png)
+- 🎨 Clean, modern UI with green health-focused theme
+- 🏋️ Personalized **1-week calisthenics workout split**
+- 🥗 **Gut-friendly diet plans** with multiple meal options
+- 📊 BMI calculation and health interpretation
+- 💧 Hydration and digestion recommendations
+- 📄 **PDF download** of your complete plan
+- 🔐 Secure - no data stored, privacy protected
+- 📱 Mobile-responsive design
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### 1. Clone the repository
-
+### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/yourusername/calicore.git
-cd calicore
+git clone https://github.com/vigneshkriishna/BODY-MORPH.git
+cd BODY-MORPH
 ```
 
-### 2. Install dependencies
-
+### 2️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Set up your environment variables
-
-Create a `.env` file in the project root:
-
+### 3️⃣ Set up your Google API key
+1. Get a Google Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create a `.streamlit/secrets.toml` file:
+```toml
+[default]
+GOOGLE_API_KEY = "your_api_key_here"
 ```
-GOOGLE_API_KEY=your_google_gemini_api_key
-```
 
-**Do not commit your `.env` file to GitHub.**
-
-### 4. Run the app
-
+### 4️⃣ Run the application
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## Deployment
+## 📋 How to Use
 
-You can deploy this app for free using [Streamlit Cloud](https://streamlit.io/cloud):
+1. **Fill out the form** with your personal details:
+   - Name, age, gender
+   - Height and weight
+   - Activity level and fitness goals
+   - Diet preferences and health conditions
 
-1. Push your code to GitHub.
-2. Go to Streamlit Cloud, connect your repo, and set `app.py` as the main file.
-3. Add your `GOOGLE_API_KEY` as a secret in the Streamlit Cloud settings.
+2. **Generate your plan** - Click the "🚀 Generate My Plan" button
 
----
+3. **Review your personalized plan** including:
+   - Weekly workout schedule
+   - Gut-friendly meal plans
+   - BMI analysis and health tips
+   - Hydration guidelines
 
-## Technologies Used
-
-- [Streamlit](https://streamlit.io/)
-- [Google Gemini AI](https://ai.google.dev/)
-- [python-dotenv](https://pypi.org/project/python-dotenv/)
-- [fpdf](https://pypi.org/project/fpdf/)
-- [python-docx](https://pypi.org/project/python-docx/)
-
----
-
-## License
-
-MIT License
+4. **Download as PDF** - Save your complete plan for offline access
 
 ---
 
-## Disclaimer
+## 🛠️ Tech Stack
 
-This app is for informational purposes only and does not replace professional medical advice.  
-Consult a healthcare provider before starting any new fitness or nutrition program.
+- **Frontend**: Streamlit
+- **AI**: Google Gemini 1.5 Flash
+- **PDF Generation**: FPDF
+- **Styling**: Custom CSS with responsive design
+- **Deployment**: Ready for Streamlit Cloud
 
 ---
+
+## 📱 Mobile Responsive
+
+BODY-MORPH is optimized for all devices:
+- 📱 Mobile phones
+- 📱 Tablets
+- 💻 Laptops and desktops
+
+---
+
+## ⚠️ Disclaimer
+
+This application provides general fitness and nutrition suggestions based on the information you provide. It is not medical advice and should not replace consultation with healthcare professionals. Always consult with a doctor before starting any new fitness or diet program.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 Developer
+
+Created by **Vignesh Krishna** 
+
+🌟 If you find this helpful, please star the repository!
