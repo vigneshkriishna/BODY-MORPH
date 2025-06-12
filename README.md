@@ -5,6 +5,47 @@
 Transform Your Body, Transform Your Life 💪
 
 ---
+## DEMO
+1. Welcome & User Input Form
+
+When you fire up BODY-MORPH, you’re greeted with a clean header, branded logo, and tagline. Below is the card container where users enter their Name, Age, Gender, Height, and Weight to kick things off.
+
+![Screenshot 2025-06-13 025448](https://github.com/user-attachments/assets/08dbb118-d8e1-4825-9df2-d50583d5541c)
+2. Advanced Profile Inputs
+
+Scroll down for the rest of the form: Activity Level, Fitness Goal, Fitness Level, Diet Preference, Allergies, and any Health Conditions you need the plan to respect.
+![Screenshot 2025-06-13 025502](https://github.com/user-attachments/assets/ae5c4cf2-48fc-4bca-98bc-e68d1bdeee34)
+
+3. Personalized Plan Generation
+
+After clicking Generate My Plan, the app greets you by name, calculates your BMI (with an emoji-style badge), and confirms your weight category before diving into the details. 1-Week Calisthenics Split (Part 1)
+The first half of your tailored 7-day calisthenics program: Monday through Wednesday, showing focus areas (Pull/Core, Legs/Push, Rest) along with exercises, sets, reps, and rest intervals. 1-Week Calisthenics Split (Part 2)
+
+![Screenshot 2025-06-13 025637](https://github.com/user-attachments/assets/d980df59-0672-4e98-a872-b0a4762c4775)
+
+Finishing out Thursday–Sunday, including core/pull, leg/push, full-body days, and active recovery, so you know exactly what to do each day.
+
+4. Gut-Friendly Diet Plan Intro
+
+Jump into the Lactose-Free, Non-Vegetarian diet framework. A quick reminder to adjust portions based on your unique caloric needs.
+![Screenshot 2025-06-13 025651](https://github.com/user-attachments/assets/96a24717-f5df-4d69-af1d-552c91eff3e2)
+
+5. Meal Options Table
+
+Five swap-and-mix options for Breakfast, Lunch, and Dinner—from oatmeal and yogurt to chicken stir-fries and salmon—designed to support gut health and muscle recovery.
+![Screenshot 2025-06-13 025702](https://github.com/user-attachments/assets/a8ebf879-4ef7-4529-bf4d-12ddf8806ba1)
+
+6. BMI Interpretation & Health Tips
+
+More than just numbers. This section breaks down what your BMI means and gives you actionable bullet-point advice on body composition, strength training, consistency, and balanced nutrition.
+![Screenshot 2025-06-13 025713](https://github.com/user-attachments/assets/fc2ca8ec-98b2-4c0c-9242-7f1449ce41eb)
+
+7. Hydration, Digestion & Download
+
+Finish strong with hydration and digestion best practices (probiotics, prebiotics, stress management) plus a one-click Download as PDF so you can take your custom plan anywhere.
+
+![Screenshot 2025-06-13 025729](https://github.com/user-attachments/assets/5bded0b2-951b-4ced-a01d-18874e9e333a)
+
 
 ## ✨ Features
 
@@ -106,6 +147,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Developer
 
-Created by **Vignesh Krishna** 
+Created by **@Vignesh** 
 
 🌟 If you find this helpful, please star the repository!
